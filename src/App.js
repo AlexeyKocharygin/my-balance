@@ -2,6 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import { Provider} from 'react-redux';
 import store from './store';
+import { addIncome, updateIncome } from './store/actions/income';
+
+store.dispatch(addIncome({ title: 'My salary', value: 55000 } ));
+console.log(store.getState());
+store.dispatch(updateIncome(0, { title: 'new title' } ));
+console.log(store.getState());
 
 function App() {
   return (
